@@ -6,6 +6,7 @@ Third-Person Shooter running on a terminal.
 Requirements
 ===
 
+- gcc
 - curses.h or ncurses.h
 
 How to Play
