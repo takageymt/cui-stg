@@ -1,7 +1,7 @@
-CUI-TPS
+CUI-Shooter
 ===
 
-Third-Person Shooter running on a terminal.
+Shooting game running on a terminal.
 
 Requirements
 ===
