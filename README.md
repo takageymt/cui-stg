@@ -3,6 +3,9 @@ CUI-Shooter
 
 Shooting game running on a terminal.
 
+![screenshot1]()
+![screenshot2]()
+
 Requirements
 ===
 
@@ -14,7 +17,7 @@ How to Play
 
 Copy `main.cpp` to your directory and then execute:
 
-     $ g++ -lcurses main.cpp
-     $ ./a.out
+     $ g++ -lcurses main.cpp -o cui-stg
+     $ ./cui-stg
 
 And you follow instructions on the window.
