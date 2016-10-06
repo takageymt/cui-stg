@@ -94,7 +94,6 @@ public:
     //enemy = name;
     if(!sec) enemy = 'V';
     else enemy = '\"';
-    srand((unsigned)time(NULL));
     x = rand()%WIN_W;
     y = 1;
     
@@ -170,7 +169,6 @@ public:
   Weak(){
 
     weak = 'U';
-    srand((unsigned)time(NULL));
     x = rand()%WIN_W;
     y = 0;
     advance = rand()%2;
@@ -470,7 +468,6 @@ void Enemy::Move(int num){
   int ch; // 移動先の状況
 
   // 動作の決定
-  srand((unsigned)time(NULL));
   dire = rand()/(num+1)%ene_pro;
 
   switch(dire){ 
@@ -521,7 +518,6 @@ void Boss::Move(){
   bool judge = true;
   int ch;                      
 
-  srand((unsigned)time(NULL));
   dire = rand()%bos_pro;
   switch(dire){
   case 0: --y; break;
@@ -751,7 +747,6 @@ void Setting(){
 
 void Level_Select(){
 
-  srand((unsigned)time(NULL));
   for(int i = 0; i < 5; i++){
     int xx, yy;
     yy = rand()%(WIN_H/2-7)+1;
@@ -942,7 +937,6 @@ void Boss_Battle(){
 
     B.Move();
 
-    srand((unsigned)time(NULL));
     if(rand()%wea_pro == 0 && wea_exist[wea_cnt%WEA_MAX] == -1){
       wea_point[wea_cnt%WEA_MAX] = new Weak();
       wea_exist[wea_cnt%WEA_MAX] = 1;
@@ -1032,7 +1026,6 @@ void Run(){
     P.Move();
 
     // エネミー出現
-    srand((unsigned)time(NULL));
     if(ene_cnt < ENE_MAX){
       int appear = rand()*ene_cnt%5;
       if(appear == 0){
@@ -1055,7 +1048,6 @@ void Run(){
       }
     }
 
-    srand((unsigned)time(NULL));
     if(rand()%wea_pro == 0 && wea_exist[wea_cnt%WEA_MAX] == -1){
       wea_point[wea_cnt%WEA_MAX] = new Weak();
       wea_exist[wea_cnt%WEA_MAX] = 1;
@@ -1128,6 +1120,8 @@ void Run(){
 /*===========================Main Function========================*/
 
 int main(){
+
+  srand((unsigned)time(NULL));
 
   initscr();
 
